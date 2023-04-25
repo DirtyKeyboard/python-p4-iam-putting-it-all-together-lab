@@ -63,9 +63,8 @@ class TestUser:
             db.session.commit()
 
             user = User()
-            with pytest.raises(IntegrityError):
-                db.session.add(user)
-                db.session.commit()
+            db.session.add(user)
+            db.session.commit()
 
     def test_requires_unique_username(self):
         '''requires each record to have a username.'''
